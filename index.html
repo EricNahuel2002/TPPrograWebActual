@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <link rel="stylesheet" href="styles/styles.css">
+    <title>Pagina principal</title>
+</head>
+<body>
+    <!--NAV PARA TODAS LAS PAGINAS-->
+    <nav class="nav">
+        <ul class="nav_lista">
+            <li class="lista_item">
+                <!--<img src="../assets/images/hogar.png" alt="" class="icono">-->
+                <a href="../index.html" class="item_link">Inicio</a>
+            </li>
+            <li class="lista_item">
+                <!--<img src="../assets/images/usuario.png" alt="" class="icono">-->
+                <a href="pages/perfil.html" class="item_link">Perfil</a>
+            </li>
+            <li class="lista_item">
+                <!--<img src="../assets/images/hogar.png" alt="" class="icono">-->
+                <a href="" class="item_link">Series</a>
+            </li>
+            <li class="lista_item">
+                <!--<img src="../assets/images/hogar.png" alt="" class="icono">-->
+                <a href="" class="item_link">Peliculas</a>
+            </li>
+            <li class="lista_item login">
+                <a href="pages/login.html" class="item_link">Iniciar sesion</a>
+            </li>
+        </ul>
+    </nav>
+
+    <!--seccion de la barra de busqueda de pelicula o serie-->
+
+    <section class="barra_de_busqueda">
+            <div class="seleccion_categoria">
+                <label for="Categoria">Categoria</label>
+                <select name="Categoria" id="Categoria">
+                <option value="" >Seleccione una opcion</option>
+                <option value="Comedia">Comedia</option>
+                <option value="Accion">Accion</option>
+                <option value="Terror">Terror</option>
+                <option value="Suspenso">Suspenso</option>
+                <option value="Ciencia Ficcion">Ciencia Ficcion</option>
+            </select>
+            </div>
+            <div class="buscador">
+                <!--<img src="assets/images/magnifier_icon-icons.com_48267.png" alt="" class="imagen_lupa">-->
+                <input type="text" placeholder="Buscar Serie o Pelicula">
+            </div>
+    </section>
+
+    <!--seccion de las peliculas y series disponibles para el usuario-->
+    <!--pensado en grilla de 4 columnas-->
+    <section class="peliculas">
+        <a href="" class="link_imagen"><img src="assets/images/baywatch.webp" alt=""><p>Baywatch</p></a>
+        <a href="" class="link_imagen"><img src="assets/images/harry-potter.webp" alt=""><p>Harry Potter: la piedra filosofal</p></a>
+        <a href="" class="link_imagen"><img src="assets/images/Mansion_embrujada.webp" alt=""><p>La casa embrujada</p></a>
+        <a href="" class="link_imagen"><img src="assets/images/Maverick.webp" alt=""><p>Maverick</p></a>
+        <a href="" class="link_imagen"><img src="assets/images/Minions.webp" alt=""><p>Minions</p></a>
+        <a href="" class="link_imagen"><img src="assets/images/Rampage.webp" alt=""><p>Rampage</p></a>
+        <a href="" class="link_imagen"><img src="assets/images/Shrek.webp" alt=""><p>Shrek 1</p></a>
+        <a href="" class="link_imagen"><img src="assets/images/Y_donde_estan_las_rubias.webp" alt=""><p>Y donde estan las rubias?</p></a>
+    </section>
+
+    <!--FOOTER IGUAL PARA TODAS LAS PAGINAS-->
+    <footer class="pieDePagina">
+        <p>Redes sociales</p>
+        <img src="../assets/images/instagram.png" alt="" class="icono">
+        <a href="">Instagram</a>
+        <img src="../assets/images/gorjeo.png" alt="" class="icono">
+        <a href="">Twitter(X)</a>
+        <img src="../assets/images/telegrama.png" alt="" class="icono">
+        <a href="">Telegram</a>
+    </footer>
+</body>
+</html>

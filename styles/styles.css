@@ -1,0 +1,261 @@
+*{
+    margin: 0;
+}
+
+
+body{
+    margin: 0;
+    font-family: Roboto;
+    background-color: #000;
+    color: #fff;
+}
+
+@font-face {
+    font-family: Montserrat;
+    src: url(../assets/fonts/Montserrat-Regular.ttf);
+}
+@font-face {
+    font-family: Roboto;
+    src: url(../assets/fonts/Roboto-Regular.ttf);
+}
+
+
+/*ACA ESTA EL ESTILO DEL NAV QUE APARECE EN TODAS LAS PAGINAS*/
+.nav{
+    background-color: transparent;
+    margin-bottom: 25px;
+    border-bottom: 1px solid #fff;
+}
+.icono{
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+.nav_lista{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    width: 100vw;
+    height: 10vh;
+    font-size: 16px;
+    align-items: center;
+    font-family: Montserrat;
+}
+
+.lista_item{
+    list-style-type: none;
+    padding: 15px;
+
+}
+
+.login{
+    margin-left: 30%;
+    margin-right: 5%;
+}
+
+.item_link{
+    text-decoration: none;
+    padding: 15px;
+    color: #fff;
+}
+
+
+
+.item_link:hover{
+    padding: 15px;
+    background-color: #39b9f5;
+    border-radius: 10px;
+}
+
+/*ACA TERMINA*/
+
+
+
+.titulo{
+    text-align: center;
+}
+
+.banner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    width: 600px;
+    height: 200px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.formulario{
+    display: flex;
+    margin: 40px auto 0 auto;
+    flex-direction: column;
+    justify-content: center;
+    width: 200px;
+}
+
+
+.formulario input{
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    border: solid 2px #aaa;
+}
+
+.formulario a{
+    margin-bottom: 5px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.formulario_submit{
+    background-color: #3989d5;
+    color: #fff;
+}
+
+.formulario_link{
+    padding: 5px;
+    background-color: #aaa;
+    color: #fff;
+}
+
+.formulario_registro{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    margin: 40px auto 40px auto;
+    justify-content: space-evenly;
+}
+
+.formulario_registro input{
+    border-radius: 10px;
+    border: solid 2px #aaa;
+}
+
+.contenedor1, .contenedor2,.contenedor3{
+    display: flex;
+    flex-flow: row wrap;
+    justify-self: center;
+    height: 50%;
+    padding: 10px;
+}
+
+.contenedor1{
+    width: 25%;
+}
+
+.contenedor2{
+    width: 25%;
+}
+
+.contenedor3{
+    width: 60%;
+}
+
+.contenedor4{
+    justify-self: center;
+    grid-column: 2 / 3;
+}
+
+.contenedor1 input,.contenedor2 input, .contenedor3 label{
+    margin-bottom: 25%;
+}
+
+.input_datos{
+    padding: 10px;
+}
+
+.contenedor4_submit, .contenedor4_link{
+    padding: 15px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.contenedor4_link{
+    text-decoration: none;
+    background-color: #aaa;
+    color: #fff;
+}
+
+.label_input{
+    white-space: nowrap;
+}
+
+
+.barra_de_busqueda{
+    display: flex;
+    justify-content: space-around;
+    width: 60%;
+}
+
+.buscador input, .seleccion_categoria select{
+    padding: 15px;
+    border-radius: 10px;
+    border: solid 2px #aaa;
+}
+
+
+
+
+
+.peliculas{
+    display: grid;
+    grid-template-columns: repeat(4,auto);
+    gap: 20px;
+    justify-content: space-around;
+    margin: 30px auto;
+    
+}
+
+.link_imagen img{
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+    border: solid #aaa 2px;
+}
+
+.link_imagen img:hover{
+    border-radius: 10px;
+    border: solid #3989d5 2px;
+}
+
+.link_imagen{
+    text-decoration: none;
+    color: #000;
+}
+
+
+
+
+
+
+
+
+
+
+.pieDePagina{
+    background-color: transparent;
+    display: flex;
+    padding: 30px;
+    align-items: center;
+    width: 100%;
+    font-family: Montserrat;
+    border-top: 1px solid #fff;
+}
+
+.pieDePagina p{
+    color: #fff;
+}
+
+.pieDePagina img{
+    margin-left: 50px;
+}
+
+.pieDePagina a{
+    text-decoration: none;
+    color: #fff;
+}
+
+
+
+
