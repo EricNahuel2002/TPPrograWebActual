@@ -6,7 +6,7 @@
 body{
     margin: 0;
     font-family: Roboto;
-    background-color: #000;
+    background-color: #18191a;
     color: #fff;
 }
 
@@ -76,15 +76,20 @@ body{
     text-align: center;
 }
 
-.banner{
+/*FORMULARIO LOGIN*/
+
+.contenedor_banner{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 auto;
+}
+
+.banner{
     width: 600px;
     height: 200px;
     border-radius: 10px;
     margin-bottom: 10px;
+
 }
 
 .formulario{
@@ -101,15 +106,23 @@ body{
     margin-bottom: 15px;
     border-radius: 10px;
     border: solid 2px #aaa;
+    background-color: transparent;
+    color: #fff;
+}
+
+.formulario input:hover{
+    inherits: padding,color;
+    border: solid 2px #39b9f5;
 }
 
 .formulario a{
     margin-bottom: 5px;
     text-align: center;
     text-decoration: none;
+    background-color: #f00;
 }
 
-.formulario_submit{
+.formulario .formulario_submit{
     background-color: #3989d5;
     color: #fff;
 }
@@ -119,6 +132,8 @@ body{
     background-color: #aaa;
     color: #fff;
 }
+
+/*FORMULARIO REGISTRO USUARIO*/
 
 .formulario_registro{
     display: grid;
@@ -130,6 +145,7 @@ body{
 .formulario_registro input{
     border-radius: 10px;
     border: solid 2px #aaa;
+    background-color: transparent;
 }
 
 .contenedor1, .contenedor2,.contenedor3{
@@ -171,6 +187,14 @@ body{
     border-radius: 10px;
 }
 
+.contenedor4 input{
+    background-color: #39b9f5;
+}
+
+.contenedor4 a{
+    background-color: rgb(219, 16, 16);
+}
+
 .contenedor4_link{
     text-decoration: none;
     background-color: #aaa;
@@ -182,20 +206,29 @@ body{
 }
 
 
+/*PANTALLA DE INICIO*/
+
 .barra_de_busqueda{
     display: flex;
     justify-content: space-around;
-    width: 60%;
+    width: 50%;
 }
 
 .buscador input, .seleccion_categoria select{
     padding: 15px;
     border-radius: 10px;
-    border: solid 2px #aaa;
+    border: 2px solid #fff;
+    background-color: #292a2c;
+    color: #fff;
 }
 
+.buscador input{
+    background-color: transparent;
+}
 
-
+.buscador input:hover, .seleccion_categoria select:hover{
+    border: 2px solid #3989d5;
+}
 
 
 .peliculas{
@@ -221,7 +254,7 @@ body{
 
 .link_imagen{
     text-decoration: none;
-    color: #000;
+    color: #fff;
 }
 
 
@@ -231,7 +264,7 @@ body{
 
 
 
-
+/*PIE DE PAGINA*/
 
 .pieDePagina{
     background-color: transparent;
