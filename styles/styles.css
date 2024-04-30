@@ -7,6 +7,7 @@ body{
     margin: 0;
     font-family: Roboto;
     background-color: #18191a;
+    /*#1E272C*/
     color: #fff;
 }
 
@@ -36,7 +37,7 @@ body{
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-around;
-    width: 100vw;
+
     height: 10vh;
     font-size: 16px;
     align-items: center;
@@ -139,13 +140,17 @@ body{
     display: grid;
     grid-template-columns: repeat(3,1fr);
     margin: 40px auto 40px auto;
-    justify-content: space-evenly;
 }
 
 .formulario_registro input{
     border-radius: 10px;
     border: solid 2px #aaa;
     background-color: transparent;
+}
+
+.formulario_registro input:hover{
+    inherits: border-radius,background-color;
+    border: 2px solid #39b9f5;
 }
 
 .contenedor1, .contenedor2,.contenedor3{
@@ -165,7 +170,11 @@ body{
 }
 
 .contenedor3{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-between;
     width: 60%;
+    height: 100%;
 }
 
 .contenedor4{
@@ -211,7 +220,7 @@ body{
 .barra_de_busqueda{
     display: flex;
     justify-content: space-around;
-    width: 50%;
+    width: 70%;
 }
 
 .buscador input, .seleccion_categoria select{
