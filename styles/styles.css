@@ -6,7 +6,7 @@
 body{
     margin: 0;
     font-family: Roboto;
-    background-color: #18191a;
+    background-color: #080F28;
     /*#1E272C*/
     color: #fff;                                          
 }
@@ -58,7 +58,7 @@ body{
 .item_link{
     text-decoration: none;
     padding: 15px;
-    color: #fff;
+    color: #ffffff;
 }
 
 
@@ -231,7 +231,7 @@ body{
     padding: 10px;
     border-radius: 10px;
     border: 2px solid #fff;
-    background-color: #292a2c;
+    background-color: #0e1a46;
     color: #fff;
 }
 
@@ -257,7 +257,7 @@ body{
     width: 200px;
     height: 200px;
     border-radius: 10px;
-    border: solid #aaa 2px;
+    border: solid #080F28 2px;
 }
 
 .link_imagen img:hover{
@@ -355,6 +355,10 @@ body{
 .contenedor_perfil1 input:hover{
     inherits: padding;
     border: 2px solid #39b9f5;
+}
+
+::placeholder{
+    color: #fff;
 }
 
 
