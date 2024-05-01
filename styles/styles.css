@@ -1,5 +1,6 @@
 *{
     margin: 0;
+    padding: 0;
 }
 
 
@@ -8,7 +9,9 @@ body{
     font-family: Roboto;
     background-color: #080F28;
     /*#1E272C*/
-    color: #fff;                                          
+    color: #fff;    
+    min-height: 100vh;  
+    min-width: 100vw;                                    
 }
 
 @font-face {
@@ -26,6 +29,7 @@ body{
     background-color: transparent;
     margin-bottom: 25px;
     border-bottom: 1px solid #fff;
+    box-shadow: 3px 3px 50px #0f1f58;
 }
 .icono{
     width: 20px;
@@ -329,6 +333,7 @@ body{
     border-radius: 10px;
     border: 2px solid #fff;
     width: 40%;
+    color: #fff;
 }
 
 .contenedor_perfil3 a{
@@ -379,13 +384,10 @@ body{
     color: #fff;
 }
 
-.pieDePagina img{
-    margin-left: 50px;
-}
-
 .pieDePagina a{
     text-decoration: none;
     color: #fff;
+    margin-left: 50px;
 }
 
 
