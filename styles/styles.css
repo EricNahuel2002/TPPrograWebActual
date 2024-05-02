@@ -26,10 +26,13 @@ body{
 
 /*ACA ESTA EL ESTILO DEL NAV QUE APARECE EN TODAS LAS PAGINAS*/
 .nav{
-    background-color: transparent;
+    background-color: #080F28;
     margin-bottom: 25px;
     border-bottom: 1px solid #fff;
     box-shadow: 3px 3px 50px #0f1f58;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
 }
 .icono{
     width: 20px;
@@ -41,7 +44,6 @@ body{
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-around;
-
     height: 10vh;
     font-size: 16px;
     align-items: center;
@@ -71,6 +73,11 @@ body{
     padding: 15px;
     background-color: #39b9f5;
     border-radius: 10px;
+}
+
+.separador{
+    width: 100%;
+    height: 15vh;
 }
 
 /*ACA TERMINA*/
@@ -247,6 +254,20 @@ body{
     border: 2px solid #3989d5;
 }
 
+.arriba{
+    background-image: url(../assets/images/arriba.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: fixed;
+    left: 50%;
+    top: 80%;
+    z-index: 1;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #0d1a47;
+}
+
 
 .peliculas{
     display: grid;
@@ -364,6 +385,63 @@ body{
 
 ::placeholder{
     color: #fff;
+}
+
+/*DETALLE PELICULA*/
+.seccion_detalle_pel{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+.peliculas{
+    position: relative;
+}
+
+.peliculas h2{
+    position: absolute;
+    top: -30px;
+    left: 0px;
+}
+
+.trailer_pel{
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.trailer_pel iframe{
+    width: 300px;
+    height: 300px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    border: 2px solid #080F28;
+}
+
+.trailer_pel a{
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #39b9f5;
+    color: #fff;
+    text-decoration: none;
+    width: 70%;
+    text-align: center;
+}
+
+.info_pel{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.info_pel textarea{
+    background-color: transparent;
+    color: #fff;
+    font-family: Roboto;
+    resize: none;
+    border : none; 
 }
 
 
