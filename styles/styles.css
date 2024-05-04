@@ -234,11 +234,15 @@ body{
 
 .barra_de_busqueda{
     display: flex;
+    flex-flow: row wrap;
     justify-content: space-around;
     width: 70%;
+    height: 100%;
+    padding: 20px;
 }
 
-.buscador input, .seleccion_categoria select{
+
+.buscador input, .seleccion_categoria select, .seleccion_año select{
     padding: 10px;
     border-radius: 10px;
     border: 2px solid #fff;
@@ -250,7 +254,7 @@ body{
     background-color: transparent;
 }
 
-.buscador input:hover, .seleccion_categoria select:hover{
+.buscador input:hover, .seleccion_categoria select:hover, .seleccion_año select:hover{
     border: 2px solid #3989d5;
 }
 
@@ -275,7 +279,6 @@ body{
     gap: 20px;
     justify-content: space-around;
     margin: 30px auto;
-    
 }
 
 .link_imagen img{
@@ -443,6 +446,54 @@ body{
     resize: none;
     border : none; 
 }
+
+
+/*DISEÑO RESPONSIVE PAGINA PRINCIPAL*/
+@media screen and (max-width:60em){
+    .nav .login{
+        margin-left: 0;
+        margin-right: 5%;
+    }
+}
+
+@media screen and (max-width:50em){
+    .peliculas{
+        grid-template-columns: repeat(2,1fr);
+    }
+    .peliculas .link_imagen{
+        justify-self: center;
+    }
+    .nav{
+        position: static;
+
+    }
+    .separador{
+        display: none;
+    }
+    .nav_lista{
+        display: flex;
+        flex-flow: column;
+        width: 100%;
+        height: 100%;
+        align-items: flex-start;
+    }
+
+    .barra_de_busqueda{
+        flex-flow: column wrap;
+    }
+    .barra_de_busqueda div{
+        margin-bottom: 10px;
+    }
+}
+
+@media screen and (max-width:37em){
+    .peliculas{
+        grid-template-columns: repeat(1,1fr);
+    }
+    
+}
+
+
 
 
 
