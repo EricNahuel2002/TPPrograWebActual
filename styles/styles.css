@@ -53,7 +53,6 @@ body{
 .lista_item{
     list-style-type: none;
     padding: 15px;
-
 }
 
 .login{
@@ -281,6 +280,10 @@ body{
     margin: 30px auto;
 }
 
+.peliculas .link_imagen{
+    justify-self: center;
+}
+
 .link_imagen img{
     width: 200px;
     height: 200px;
@@ -454,15 +457,19 @@ body{
         margin-left: 0;
         margin-right: 5%;
     }
+    .peliculas{
+        grid-template-columns: repeat(3,1fr);
+    }
+    .formulario_registro{
+        grid-template-columns: repeat(2,1fr);
+    }
 }
 
 @media screen and (max-width:50em){
     .peliculas{
         grid-template-columns: repeat(2,1fr);
     }
-    .peliculas .link_imagen{
-        justify-self: center;
-    }
+    
     .nav{
         position: static;
 
@@ -477,6 +484,7 @@ body{
         height: 100%;
         align-items: flex-start;
     }
+
 
     .barra_de_busqueda{
         flex-flow: column wrap;
