@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/styles.css">
+    <title>Solo Series</title>
+</head>
+<body>
+    <nav class="nav">
+        <ul class="nav_lista">
+            <li class="lista_item">
+                <a href="../index.html" class="item_link">Inicio</a>
+            </li>
+            <li class="lista_item">
+                <a href="perfil.html" class="item_link">Perfil</a>
+            </li>
+            <li class="lista_item">
+                <a href="../pages/solo_peliculas.html" class="item_link">Peliculas</a>
+            </li>
+            <li class="lista_item login">
+                <a href="login.html" class="item_link">Iniciar sesion</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="separador"></div>
+
+    <!--seccion de la barra de busqueda de pelicula o serie-->
+
+    <section class="barra_de_busqueda">
+        <div class="seleccion_categoria">
+            <select name="Categoria" id="Categoria">
+            <option value="" >Categoria</option>
+            <option value="1">Comedia</option>
+            <option value="2">Accion</option>
+            <option value="3">Terror</option>
+            <option value="4">Suspenso</option>
+            <option value="5">Ciencia Ficcion</option>
+        </select>
+        </div>
+        <div class="seleccion_año">
+            <select name="Seleccion_año" id="año">
+            <option value="">2024</option>
+            <option value="1">2023</option>
+            <option value="2">2022</option>
+            <option value="3">2021</option>
+            <option value="4">2020</option>
+            <option value="5">2019</option>
+        </select>
+        </div>
+        <div class="buscador">
+            <!--<img src="assets/images/magnifier_icon-icons.com_48267.png" alt="" class="imagen_lupa">-->
+            <input type="text" name="buscador" placeholder="Buscar Serie">
+            <button><img src="assets/images/luupa.png" alt="" class="imagen_lupa"></button>
+        </div>
+</section>
+<a href="#separador" class="arriba"></a>
+
+<!--seccion de series disponibles para el usuario-->
+    <!--pensado en grilla de 4 columnas-->
+    <section class="peliculas">
+        <a href="../pages/detalle_serie.html" class="link_imagen"><img src="../assets/images/Peaky blinders.jpg " alt=""><p>Peaky Blinders<br>10/10</p></a>
+        <a href="../pages/detalle_serie.html" class="link_imagen"><img src="../assets/images/Merli.webp" alt=""><p>Merli<br>6/10</p></a>
+        <a href="../pages/detalle_serie.html" class="link_imagen"><img src="../assets/images/Friends.jpg" alt=""><p>Friends<br>8/10</p></a>
+        <a href="../pages/detalle_serie.html" class="link_imagen"><img src="../assets/images/Elite.jpeg" alt=""><p>Elite<br>8/10</p></a>
+        <a href="../pages/detalle_serie.html" class="link_imagen"><img src="../assets/images/Flash.jpeg" alt=""><p>Flash<br>7.5/10</p></a>
+        <a href="../pages/detalle_serie.html" class="link_imagen"><img src="../assets/images/Arrow.jpg" alt=""><p>Arrow<br>6.8/10</p></a>
+        <a href="../pages/detalle_serie.html" class="link_imagen"><img src="../assets/images/El_Encargado.avif" alt=""><p>El Encargado<br>10/10</p></a>
+        <a href="../pages/detalle_serie.html" class="link_imagen"><img src="../assets/images/coppola.avif" alt=""><p>Coppola<br>7.5/10</p></a>
+        <a href="../pages/detalle_serie.html" class="link_imagen"><img src="../assets/images/Lucifer.avif" alt=""><p>Lucifer<br>10/10</p></a>
+        <a href="../pages/detalle_serie.html" class="link_imagen"><img src="../assets/images/Ringo.jpg" alt=""><p>Ringo<br>10/10</p></a>
+        <a href="../pages/detalle_serie.html" class="link_imagen"><img src="../assets/images/you.jpeg" alt=""><p>You<br>6/10</p></a>
+        <a href="../pages/detalle_serie.html" class="link_imagen"><img src="../assets/images/Luis Miguel.webp" alt=""><p>Luis Miguel<br>8/10</p></a>
+        </section>
+
+    <footer class="pieDePagina">
+        <p>Redes sociales</p>
+        
+        <a href=""><img src="../assets/images/instagram.png" alt="" class="icono"></a>
+        
+        <a href=""><img src="../assets/images/gorjeo.png" alt="" class="icono"></a>
+        
+        <a href=""><img src="../assets/images/telegrama.png" alt="" class="icono"></a>
+    </footer>
+</body>
+</html>

@@ -3,15 +3,18 @@
     padding: 0;
 }
 
+html,body{
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 
 body{
     margin: 0;
     font-family: Roboto;
     background-color: #080F28;
     /*#1E272C*/
-    color: #fff;    
-    min-height: 100vh;  
-    min-width: 100vw;                                    
+    color: #fff;                                      
 }
 
 @font-face {
@@ -342,6 +345,7 @@ body{
     border-radius: 10px;
     background-color: transparent;
     color: #fff;
+    border: 2px solid #fff;
 }
 
 .contenedor_perfil3 input{
@@ -359,6 +363,9 @@ body{
     margin-left: 15px;
 }
 
+.contenedor_perfil1 input:hover, .contenedor_perfil2 input:hover{
+    border: 2px solid #39b9f5;
+}
 
 
 
@@ -425,6 +432,53 @@ body{
 
 /*DETALLE SERIE*/
 
+.seccion_detalle_serie{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+.series{
+    position: relative;
+}
+
+.series h2{
+    position: absolute;
+    top: -30px;
+    left: 0px;
+}
+
+.trailer_serie{
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.trailer_serie iframe{
+    width: 300px;
+    height: 300px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    border: 2px solid #080F28;
+}
+
+.trailer_serie a{
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #39b9f5;
+    color: #fff;
+    text-decoration: none;
+    width: 70%;
+    text-align: center;
+}
+
+.info_serie{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
 
 /*DISEÑO RESPONSIVE*/
 @media screen and (max-width:60em){
@@ -475,7 +529,8 @@ body{
 
     }
     .separador{
-        display: none;
+        width: 1px;
+        height: 1px;
     }
     .nav_lista{
         display: flex;
