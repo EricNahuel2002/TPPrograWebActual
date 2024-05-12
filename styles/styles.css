@@ -263,7 +263,7 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
     position: fixed;
-    left: 50%;
+    left: 95%;
     top: 80%;
     z-index: 1;
     width: 50px;
@@ -275,7 +275,7 @@ body{
 
 .peliculas{
     display: grid;
-    grid-template-columns: repeat(4,auto);
+    grid-template-columns: repeat(5,auto);
     gap: 20px;
     justify-content: space-around;
     margin: 30px auto;
