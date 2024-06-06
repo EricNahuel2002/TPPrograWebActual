@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="stylesheet" href="../styles/styles.css">
+    <script src="../scripts/validaciones.js"></script>
     <title>Recuperar contraseña</title>
 </head>
 <body>
@@ -27,12 +28,12 @@
 
     <!--FORMULARIO DE RECUPERAR CONTRASEÑA QUE TE LLEVA DE VUELTA A INICIAR SESION-->
     <h1 class="titulo">Recuperar Contraseña</h1>
-    <form action="login.html" method="post" class="formulario">
+    <form action="login.html" method="post" class="formulario" id="formulario">
         <label for="email">Email</label>
-        <input type="email" name="email" id="email" placeholder="Ejemplo@Email.com" required>
+        <input type="email" name="email" id="email" placeholder="Ejemplo@Email.com">
         <label for="nombre_usuario">Usuario</label>
-        <input type="text" name="nombre_usuario" id="nombre_usuario" placeholder="EjemploUsuario" required>
-        <input type="submit" name="enviar_mail" value="Enviar mail" class="formulario_submit">
+        <input type="text" name="nombre_usuario" id="nombre_usuario" placeholder="EjemploUsuario">
+        <input type="button" name="enviar_mail" value="Enviar mail" class="formulario_submit" id="enviar">
         <a href="login.html" class="formulario_link">Volver</a>
     </form>
 

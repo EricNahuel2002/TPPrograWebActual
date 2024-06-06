@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="stylesheet" href="../styles/styles.css">
+    <script src="../scripts/validaciones.js"></script>
     <title>Registrar usuario</title>
 </head>
 <body>
@@ -31,7 +32,7 @@
     </h1>
 
     
-    <form action="login.html" class="formulario_registro">
+    <form action="login.html" class="formulario_registro" id="formulario">
         <div class="contenedor1">
         <label for="nombre" class="label_input">Nombre</label>
         <input type="text" name="nombre" id="nombre" placeholder="Pepe" class="input_datos">
@@ -52,19 +53,19 @@
             <label for="Mercado_pago">Mercado pago
                 <input name= "Metodo_de_pago" type="radio" id="Mercado_pago">
             </label>
-            <input type="text" name="mercado_pago" placeholder="2151 51231531 321531213" class="radio_input">
+            <input type="text" name="mercado_pago" placeholder="2151 51231531 321531213" class="radio_input" id="Mercado_pago_input">
             <label for="Cupon_de_pago">Cupon de pago
                 <input name= "Metodo_de_pago" type="radio" id="Cupon_de_pago">
-                <p>Rapi pago<input type="checkbox" name="rapi_pago"></p>
-                <p>Pago facil<input type="checkbox" name="pago_facil"></p>
+                <p>Rapi pago<input type="checkbox" name="rapi_pago" id="checkbox_cp"></p>
+                <p>Pago facil<input type="checkbox" name="pago_facil" id="checkbox_cp2"></p>
             </label>
             <label for="Transferencia_bancaria">Transferencia bancaria
                 <input name= "Metodo_de_pago" name="transferencia_bancaria" type="radio" id="Transferencia_bancaria">
             </label>
-            <input type="text" name="numero_tarjeta" id="" placeholder="XXXXXXX-XXXXXXX-XXXXXXXXX" class="radio_input">
+            <input type="text" name="numero_tarjeta" id="transferencia_bancaria_nro" placeholder="XXXXXXX-XXXXXXX-XXXXXXXXX" class="radio_input">
         </div>
         <div class="contenedor4">
-        <input type="submit" name="confirmar" value="Confirmar" class="contenedor4_submit">
+        <input type="button" name="confirmar" value="Confirmar" class="contenedor4_submit" id="enviar">
         <a href="login.html" class="contenedor4_link">Cancelar</a>
         </div>
     </form>
