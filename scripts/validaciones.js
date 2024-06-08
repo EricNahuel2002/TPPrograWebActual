@@ -60,7 +60,8 @@ function paginaRegistroUsuario(){
         let usuario = document.getElementById("nombre_usuario");
         let contrasenia = document.getElementById("contrasenia");
         let repetirContrasenia = document.getElementById("repetir_contrasenia");
-        let metodosDePago = document.getElementsByName("Metodo_de_pago")
+        let metodosDePago = document.getElementsByName("Metodo_de_pago");
+
         let error = false;
 
         let validarNombre = /^[A-Za-z]+$/;
@@ -102,13 +103,47 @@ function paginaRegistroUsuario(){
 }
 
 function validarMetodoDePago(metodosDePago){
-    for(i in metodosDePago){
-        if(i.checked){
-            return false;
+    let radiosInput = document.getElementsByName("metodo_input");
+    let radioChecked = false;
+    let inputVacio = false;
+    for(let i in metodosDePago){
+        if(metodosDePago[i].checked){
+            radioChecked = true;
+            if(metodosDePago[i].id === "Mercado_pago"){
+                let campoMercadoPago = document.getElementById("Mercado_pago_input");
+                if(!campoMercadoPago.value){
+                    alert("Rellena el campo de Mercado Pago.")
+                    inputVacio = true;
+                }
+                break;
+            }
+            if(metodosDePago[i].id === "Cupon_de_pago"){
+                let rapiPagoCheckbox = document.getElementById("rapi_pago");
+                let pagoFacilCheckbox = document.getElementById("pago_facil");
+                if(!rapiPagoCheckbox.checked && !pagoFacilCheckbox.checked){
+                    alert("Elije un lugar donde pagar el cupon.")
+                }
+                break;
+            }
+            if(metodosDePago[i].id === "Transferencia_bancaria"){
+                let campoTransferenciaBancaria = document.getElementById("transferencia_bancaria_nro");
+                if(!campoTransferenciaBancaria.value){
+                    inputVacio = true;
+                    alert("Rellena el campo de transferencia bancaria.");
+                }
+                break;
+            }
         }
     }
-    alert("Error en radio");
-    return true;
+
+    if(!radioChecked){
+        alert("Elije un metodo de pago.");
+        return true;
+    }
+    if(radioChecked && inputVacio){
+        return true;
+    }
+    return false;
 }
 
 function validarEmail(email){
