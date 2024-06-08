@@ -13,23 +13,11 @@ function paginaLogin(){
     function validarCampos(){
         let formulario = document.getElementById("formulario");
         let email = document.getElementById("email");
-        let contraseña = document.getElementById("contraseña");
-        let form_correcto = true;
-        let validarEmail = /^(.+\@.+\..+)$/;
-    
-        if(!validarEmail.test(email.value) || !email.value){
-            alert("Error en mail, intentalo de nuevo.");
-            form_correcto = false;
-        }
-    
-        let validarContraseña = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
-    
-        if(!validarContraseña.test(contraseña.value) || !contraseña.value){
-            alert("Contraseña no valida, al menos 1 caracter o 1 numero y un largo minimo de 8");
-            form_correcto = false;
-        }
-    
-        if(form_correcto){
+        let contrasenia = document.getElementById("contraseña");
+        let error = false;
+        form_correcto = validarEmail(email);
+        form_correcto = validarContrasenia(contrasenia);
+        if(!error){
             formulario.submit();
         }
     }
@@ -45,22 +33,13 @@ function paginaRecuperarContraseña(){
         let formulario = document.getElementById("formulario");
         let email = document.getElementById("email");
         let usuario = document.getElementById("nombre_usuario");
-        let formularioCorrecto = true;
-
-        let validarEmail = /^(.+\@.+\..+)$/;
-
-        if(!validarEmail.test(email.value) || !email.value){
-            alert("Error en email, intenta de nuevo.")
-            formularioCorrecto = false;
-        }
-
+        let error = false;
+        form_correcto = validarEmail(email);
         if(!usuario.value){
             alert("Pone tu usuario.")
-            formularioCorrecto = false;
+            error = true;
         }
-
-
-        if(formularioCorrecto){
+        if(!error){
             formulario.submit();
         }
     }
@@ -78,6 +57,11 @@ function paginaRegistroUsuario(){
         let nombre = document.getElementById("nombre");
         let apellido = document.getElementById("apellido");
         let email = document.getElementById("email");
+        let usuario = document.getElementById("nombre_usuario");
+        let contrasenia = document.getElementById("contrasenia");
+        let repetirContrasenia = document.getElementById("repetir_contrasenia");
+        let metodosDePago = document.getElementsByName("Metodo_de_pago")
+        let error = false;
 
         let validarNombre = /^[A-Za-z]+$/;
 
@@ -88,8 +72,60 @@ function paginaRegistroUsuario(){
         let validarApellido = /^[A-Za-z]+$/;
         if(!validarApellido.test(apellido.value) || !apellido.value){
             alert("Solo se admiten letras en tu apellido o esta vacio.")
+            error = true;
+        }
+
+        formulario_correcto = validarEmail(email);
+
+        let validarUsuario = /^[A-Za-z\d]+$/;
+        if(!validarUsuario.test(usuario.value) || !usuario.value){
+            alert("Error en nombre de usuario.")
+            error = true;
+        }
+
+        let validarContrasenia = /^(?=(.*[A-Za-z]){2})(?=(.*\d){2})(?=(.*\W){2}).{8,}$/;
+        if(!validarContrasenia.test(contrasenia.value) || !contrasenia.value){
+            alert("Error en contraseña");
+            error = true;
+        }
+
+        if(repetirContrasenia.value != contrasenia.value || !repetirContrasenia.value){
+            alert("Error en repetir contraseña");
+        }
+
+        error = validarMetodoDePago(metodosDePago);
+
+        if(!error){
+            formulario.submit();
         }
     }
+}
+
+function validarMetodoDePago(metodosDePago){
+    for(i in metodosDePago){
+        if(i.checked){
+            return false;
+        }
+    }
+    alert("Error en radio");
+    return true;
+}
+
+function validarEmail(email){
+    let validarEmail = /^(.+\@.+\..+)$/;
+    if(!validarEmail.test(email.value) || !email.value){
+        alert("Error en mail, intentalo de nuevo.");
+        return true;
+    }
+    return false;
+}
+
+function validarContrasenia(contrasenia){
+        if(!contrasenia.value){
+            alert("Error en contraseña");
+            return true;
+        }
+        return false;
 }
 
 const paginaActual = getPaginaActual();

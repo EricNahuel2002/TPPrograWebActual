@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="stylesheet" href="../styles/styles.css">
-    <script src="../scripts/validaciones.js"></script>
+    
     <title>Registrar usuario</title>
 </head>
 <body>
@@ -44,10 +44,10 @@
         <div class="contenedor2">
         <label for="nombre_usuario" class="label_input">Usuario</label>
         <input type="text" name="nombre_usuario" id="nombre_usuario" placeholder="PepeRuiz2001" class="input_datos">
-        <label for="contraseña" class="label_input">Contraseña</label>
-        <input type="password" name="contraseña" id="contraseña" placeholder="Contraseña" class="input_datos">
-        <label for="repetir_contraseña" class="label_input">Repetir Contraseña</label>
-        <input type="password" name="repetir_contraseña" id="repetir_contraseña" placeholder="Contraseña" class="input_datos">
+        <label for="contrasenia" class="label_input">Contraseña</label>
+        <input type="password" name="contraseña" id="contrasenia" placeholder="Contraseña" class="input_datos">
+        <label for="repetir_contrasenia" class="label_input">Repetir Contraseña</label>
+        <input type="password" name="repetir_contrasenia" id="repetir_contrasenia" placeholder="Contraseña" class="input_datos">
         </div>
         <div class="contenedor3">
             <label for="Mercado_pago">Mercado pago
@@ -60,7 +60,7 @@
                 <p>Pago facil<input type="checkbox" name="pago_facil" id="checkbox_cp2"></p>
             </label>
             <label for="Transferencia_bancaria">Transferencia bancaria
-                <input name= "Metodo_de_pago" name="transferencia_bancaria" type="radio" id="Transferencia_bancaria">
+                <input name= "Metodo_de_pago" type="radio" id="Transferencia_bancaria">
             </label>
             <input type="text" name="numero_tarjeta" id="transferencia_bancaria_nro" placeholder="XXXXXXX-XXXXXXX-XXXXXXXXX" class="radio_input">
         </div>
@@ -80,5 +80,6 @@
         
         <a href=""><img src="../assets/images/telegrama.png" alt="" class="icono"></a>
     </footer>
+    <script src="../scripts/validaciones.js"></script>
 </body>
 </html>
