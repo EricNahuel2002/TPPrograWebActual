@@ -6,130 +6,114 @@ function getPaginaActual(){
 
 function paginaLogin(){
     window.onload = function(){
-        var enviar = document.getElementById("enviar");
-        enviar.onclick = validarCampos;
-    }
-    
-    function validarCampos(){
-        let formulario = document.getElementById("formulario");
-        let email = document.getElementById("email");
-        let contrasenia = document.getElementById("contraseña");
-        let error = false;
-        form_correcto = validarEmail(email);
-        form_correcto = validarContrasenia(contrasenia);
-        if(!error){
-            formulario.submit();
-        }
+        document.getElementById("formulario").addEventListener("submit",function(event){
+            let email = document.getElementById("email");
+            let contrasenia = document.getElementById("contraseña");
+            validarEmail(email,event);
+            validarContrasenia(contrasenia,event);
+        });
     }
 }
 
 function paginaRecuperarContraseña(){
     window.onload = function(){
-        botonEnviar = document.getElementById("enviar");
-        botonEnviar.onclick = validarCampos;
-    }
-
-    function validarCampos(){
-        let formulario = document.getElementById("formulario");
-        let email = document.getElementById("email");
-        let usuario = document.getElementById("nombre_usuario");
-        let error = false;
-        form_correcto = validarEmail(email);
-        if(!usuario.value){
-            alert("Pone tu usuario.")
-            error = true;
-        }
-        if(!error){
-            formulario.submit();
-        }
+        document.getElementById("formulario").addEventListener("submit",function(event){
+            let email = document.getElementById("email");
+            let usuario = document.getElementById("nombre_usuario");
+            validarEmail(email,event);
+            if(!usuario.value){
+                alert("Pone tu usuario.");
+                event.preventDefault();
+            }
+        });
     }
 }
 
 
 function paginaRegistroUsuario(){
     window.onload = function(){
-        var enviar = document.getElementById("enviar");
-        enviar.onclick = validarCampos;
+        document.getElementById("formulario").addEventListener("submit",function(event){
+            let nombre = document.getElementById("nombre");
+            let apellido = document.getElementById("apellido");
+            let email = document.getElementById("email");
+            let usuario = document.getElementById("nombre_usuario");
+            let contrasenia = document.getElementById("contrasenia");
+            let repetirContrasenia = document.getElementById("repetir_contrasenia");
+            let metodosDePago = document.getElementsByName("Metodo_de_pago");
+    
+    
+            let validarNombre = /^[A-Za-z]+$/;
+    
+            if(!validarNombre.test(nombre.value) || !nombre.value){
+                alert("Solo se admiten letras en tu nombre o esta vacio.");
+                event.preventDefault();
+            }
+    
+            let validarApellido = /^[A-Za-z]+$/;
+            if(!validarApellido.test(apellido.value) || !apellido.value){
+                alert("Solo se admiten letras en tu apellido o esta vacio.");
+                event.preventDefault();
+            }
+    
+            formulario_correcto = validarEmail(email);
+    
+            let validarUsuario = /^[A-Za-z\d]+$/;
+            if(!validarUsuario.test(usuario.value) || !usuario.value){
+                alert("Error en nombre de usuario.");
+                event.preventDefault();
+            }
+    
+            let validarContrasenia = /^(?=(.*[A-Za-z]){2})(?=(.*\d){2})(?=(.*\W){2}).{8,}$/;
+            if(!validarContrasenia.test(contrasenia.value) || !contrasenia.value){
+                alert("Error en contraseña");
+                event.preventDefault();
+            }
+    
+            if(repetirContrasenia.value != contrasenia.value || !repetirContrasenia.value){
+                alert("Error en repetir contraseña");
+                event.preventDefault();
+            }
+    
+            validarMetodoDePago(metodosDePago,event);
+        });
+    }
     }
 
-    function validarCampos(){
-        let formulario = document.getElementById("formulario");
-        let nombre = document.getElementById("nombre");
-        let apellido = document.getElementById("apellido");
-        let email = document.getElementById("email");
-        let usuario = document.getElementById("nombre_usuario");
-        let contrasenia = document.getElementById("contrasenia");
-        let repetirContrasenia = document.getElementById("repetir_contrasenia");
-        let metodosDePago = document.getElementsByName("Metodo_de_pago");
 
-        let error = false;
-
-        let validarNombre = /^[A-Za-z]+$/;
-
-        if(!validarNombre.test(nombre.value) || !nombre.value){
-            alert("Solo se admiten letras en tu nombre o esta vacio.")
-        }
-
-        let validarApellido = /^[A-Za-z]+$/;
-        if(!validarApellido.test(apellido.value) || !apellido.value){
-            alert("Solo se admiten letras en tu apellido o esta vacio.")
-            error = true;
-        }
-
-        formulario_correcto = validarEmail(email);
-
-        let validarUsuario = /^[A-Za-z\d]+$/;
-        if(!validarUsuario.test(usuario.value) || !usuario.value){
-            alert("Error en nombre de usuario.")
-            error = true;
-        }
-
-        let validarContrasenia = /^(?=(.*[A-Za-z]){2})(?=(.*\d){2})(?=(.*\W){2}).{8,}$/;
-        if(!validarContrasenia.test(contrasenia.value) || !contrasenia.value){
-            alert("Error en contraseña");
-            error = true;
-        }
-
-        if(repetirContrasenia.value != contrasenia.value || !repetirContrasenia.value){
-            alert("Error en repetir contraseña");
-        }
-
-        error = validarMetodoDePago(metodosDePago);
-
-        if(!error){
-            formulario.submit();
-        }
-    }
-}
-
-function validarMetodoDePago(metodosDePago){
+function validarMetodoDePago(metodosDePago,event){
     let radiosInput = document.getElementsByName("metodo_input");
     let radioChecked = false;
     let inputVacio = false;
+    let inputConError = false;
     for(let i in metodosDePago){
         if(metodosDePago[i].checked){
             radioChecked = true;
             if(metodosDePago[i].id === "Mercado_pago"){
-                let campoMercadoPago = document.getElementById("Mercado_pago_input");
-                if(!campoMercadoPago.value){
-                    alert("Rellena el campo de Mercado Pago.")
-                    inputVacio = true;
+                let campoTarjetaCredito = document.getElementById("tarjeta_de_credito_input");
+                let campoTarjetaCredito2 = document.getElementById("tarjeta_de_credito_input2");
+                if(!campoTarjetaCredito.value || !campoTarjetaCredito2.value){
+                    alert("Rellena los campos de Tarjeta de credito.")
+                    event.preventDefault();
+                    break;
                 }
+                validarNumerosDeTarjeta(campoTarjetaCredito,event);
+                claveTarjetaValida(campoTarjetaCredito2,event);
                 break;
             }
             if(metodosDePago[i].id === "Cupon_de_pago"){
                 let rapiPagoCheckbox = document.getElementById("rapi_pago");
                 let pagoFacilCheckbox = document.getElementById("pago_facil");
                 if(!rapiPagoCheckbox.checked && !pagoFacilCheckbox.checked){
-                    alert("Elije un lugar donde pagar el cupon.")
+                    alert("Elije un lugar donde pagar el cupon.");
+                    event.preventDefault();
                 }
                 break;
             }
             if(metodosDePago[i].id === "Transferencia_bancaria"){
                 let campoTransferenciaBancaria = document.getElementById("transferencia_bancaria_nro");
                 if(!campoTransferenciaBancaria.value){
-                    inputVacio = true;
                     alert("Rellena el campo de transferencia bancaria.");
+                    event.preventDefault();
                 }
                 break;
             }
@@ -138,29 +122,63 @@ function validarMetodoDePago(metodosDePago){
 
     if(!radioChecked){
         alert("Elije un metodo de pago.");
-        return true;
+        event.preventDefault();
     }
-    if(radioChecked && inputVacio){
-        return true;
-    }
-    return false;
 }
 
-function validarEmail(email){
+function validarNumerosDeTarjeta(campoTarjetaCredito,event){
+    let regExpCampoTarjetaCredito = /^\d{16,19}$/;
+                if(regExpCampoTarjetaCredito.test(campoTarjetaCredito.value)){
+                    let sumatoria = 0;
+                    let ultimoNumero = 0;
+                    for(let i = 0; i < campoTarjetaCredito.value.length -1; i++){
+                        sumatoria += parseInt(campoTarjetaCredito.value[i]);
+                        ultimoNumero = parseInt(campoTarjetaCredito.value[i+1]);
+                    }
+                    if(sumatoria % 2 == 0){
+                        if(ultimoNumero % 2 == 0){
+                        alert("El ultimo numero de la tarjeta debe ser impar");
+                        event.preventDefault();
+                        }
+                    }
+                    if(sumatoria % 2 != 0){
+                        if(ultimoNumero % 2 != 0){
+                        alert("El ultimo numero de la tarjeta debe ser par");
+                        event.preventDefault();
+                        }
+                    }
+                }else {
+                    alert("La tarjeta debe tener entre 16 y 19 digitos");
+                    event.preventDefault();
+                }
+}
+
+function claveTarjetaValida(campoTarjetaCredito2,event){
+    if(campoTarjetaCredito2.value.length === 3){
+    let validarQueLosTresDigitosSeanDistintosDeCero = /^(?!000)\d{3}$/;
+    if(!validarQueLosTresDigitosSeanDistintosDeCero.test(campoTarjetaCredito2.value)){
+        alert("La clave no puede ser tres ceros");
+        event.preventDefault();
+    }
+    }else{
+        alert("La clave debe ser exactamente de 3 digitos");
+        event.preventDefault();
+    }
+}
+
+function validarEmail(email,event){
     let validarEmail = /^(.+\@.+\..+)$/;
     if(!validarEmail.test(email.value) || !email.value){
         alert("Error en mail, intentalo de nuevo.");
-        return true;
-    }
-    return false;
+        event.preventDefault();
+    };
 }
 
-function validarContrasenia(contrasenia){
+function validarContrasenia(contrasenia,event){
         if(!contrasenia.value){
             alert("Error en contraseña");
-            return true;
+            event.preventDefault();
         }
-        return false;
 }
 
 const paginaActual = getPaginaActual();

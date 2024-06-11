@@ -114,7 +114,7 @@ body{
     flex-direction: column;
     justify-content: center;
     width: 200px;
-    background-color: rgb(59, 59, 59);
+    border: 2px solid #fff;
     padding: 10px;
     border-radius: 10px;
     
@@ -172,10 +172,13 @@ body{
     display: flex;
     flex-flow: column wrap;
     width: 60%;
-    background-color: rgb(59, 59, 59);
     padding: 10px;
     border-radius: 10px;
     box-sizing: border-box;
+}
+
+.contenedor3{
+    flex-flow: row wrap;
 }
 
 .contenedor1 input, .contenedor2 input, .contenedor3 input{
@@ -185,6 +188,15 @@ body{
     border: 2px solid #fff;
     width:  auto;
     margin-bottom: 2em;
+    color: #fff;
+}
+
+.contenedor3 #tarjeta_de_credito_input{
+    width: 55%;
+}
+
+.contenedor3 #tarjeta_de_credito_input2{
+    width: 15%;
 }
 
 .contenedor3{
