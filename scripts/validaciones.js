@@ -80,6 +80,35 @@ function paginaRegistroUsuario(){
     }
 
 
+    function paginaPerfil(){
+        window.onload = function(){
+            document.getElementById("formulario").addEventListener("submit",function(event){
+                let contrasenia = document.getElementById("contrasenia_nueva");
+                let repetirContrasenia = document.getElementById("repetir_contrasenia");
+                let metodosDePago = document.getElementsByName("Metodo_de_pago");
+                let validarContrasenia = /^(?=(.*\d){2})(?=(.*[A-Za-z]){2})(?=(.*\W){2}).{8,}$/;
+                if(!validarContrasenia.test(contrasenia.value) || !contrasenia.value){
+                    alert("La contraseña debe tener al menos 2 numeros, 2 letras y 2 caracteres especiales y 8 de longitud.");
+                    event.preventDefault();
+                }
+                if(repetirContrasenia.value !== contrasenia.value || !repetirContrasenia.value){
+                    alert("Las contraseñas no coinciden");
+                    event.preventDefault();
+                }
+                validarMetodoDePago(metodosDePago,event);
+            });
+        }
+    }
+
+    function paginaDetalleSerie(){
+        window.onload = function(){
+            
+        }
+    }
+
+
+
+
 function validarMetodoDePago(metodosDePago,event){
     let radiosInput = document.getElementsByName("metodo_input");
     let radioChecked = false;
@@ -191,6 +220,12 @@ if(paginaActual == "recuperar_contrasenia.html"){
 }
 if(paginaActual == "registro_usuario.html"){
     paginaRegistroUsuario();
+}
+if(paginaActual == "perfil.html"){
+    paginaPerfil();
+}
+if(paginaActual == "detalle_serie.html"){
+    paginaDetalleSerie();
 }
 
 

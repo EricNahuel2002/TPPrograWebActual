@@ -356,60 +356,13 @@ body{
 
 .formulario_perfil{
     display: grid;
-    grid-template-columns: repeat(3,auto);
-    justify-content: center;
-    gap: 50px;
-    margin: 40px auto 40px auto;
-    font-family: Roboto;
-    border: 1px solid #aaa;
-    width: 60%;
-    padding: 20px;
-    border-radius: 10px;
-}
-
-
-.contenedor_perfil3{
-    justify-self: start;
-    grid-column: 1/3;
-}
-
-.contenedor_perfil1, .contenedor_perfil2{
-    display: flex;
-    flex-flow: column wrap;
+    grid-template-columns: repeat(3,1fr);
+    gap: 60px;
+    margin-top: 60px;
+    justify-items: center;
+    align-items: start;
     box-sizing: border-box;
-    padding: 5px;
-    border-radius: 10px;
-    justify-content: space-between;
 }
-
-.contenedor_perfil1 input, .contenedor_perfil2 input{
-    padding: 10px;
-    border-radius: 10px;
-    background-color: transparent;
-    color: #fff;
-    border: 2px solid #fff;
-}
-
-.contenedor_perfil3 input{
-    padding: 10px;
-    border-radius: 10px;
-    background-color: #39b9f5;
-    color: #fff;
-}
-.contenedor_perfil3 a {
-    padding: 10px;
-    border-radius: 10px;
-    background-color: #f00;
-    color: #fff;
-    text-decoration: none;
-    margin-left: 15px;
-}
-
-.contenedor_perfil1 input:hover, .contenedor_perfil2 input:hover{
-    border: 2px solid #39b9f5;
-}
-
-
 
 ::placeholder{
     color: #fff;
@@ -535,27 +488,9 @@ body{
         grid-template-columns: repeat(2,1fr);
     }
     .formulario_perfil{
-        display: flex;
-        flex-flow: column;
-        align-items: center;
-        justify-content: space-around;
+        grid-template-columns: repeat(2,1fr);
     }
-    .contenedor_perfil1{
-        width: 20%;
-        flex-flow: row wrap;
-    }
-    .contenedor_perfil2{
-        width: 20%;
-        flex-flow: row wrap;
-    }
-    .contenedor_perfil3{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    .contenedor_perfil3 a{
-        margin-top: 15px;
-    }
+
 }
 
 @media screen and (max-width:50em){
@@ -603,6 +538,13 @@ body{
         grid-template-columns: 1fr;
     }
     .formulario_registro .contenedor4{
+        grid-column: auto;
+        grid-row: 4/4;
+    }
+    .formulario_perfil{
+        grid-template-columns: 1fr;
+    }
+    .formulario_perfil .contenedor4{
         grid-column: auto;
         grid-row: 4/4;
     }

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="stylesheet" href="../styles/styles.css">
+    <script src="../scripts/validaciones.js"></script>
     <title>Perfil</title>
 </head>
 <body>
@@ -23,35 +24,38 @@
     <div class="separador"></div>
 
     
-    <form action="../index.html" class="formulario_perfil">
+    <form action="../index.html" class="formulario_perfil" id="formulario">
         <div class="user_img_container">
             <img src="../assets/images/hombre.png" alt="">
             <p>Usuario_random1902</p>
         </div>
-        <div class="contenedor_perfil1">
+        <div class="contenedor1">
             <p>Email:Usuario_random1902@gmail.com</p>
             <p>Contraseña: contraseña123</p>
+            <div class="contenedor2">
             <label for="contraseña_nueva">Nueva contraseña</label>
-            <input type="password" name="contraseña_nueva" id="contraseña_nueva">
+            <input type="password" name="contraseña_nueva" id="contrasenia_nueva" class="input_datos">
             <label for="repetir_contraseña">Repetir contraseña</label>
-            <input type="password" name="repetir_contraseña" id="repetir_contraseña">
+            <input type="password" name="repetir_contraseña" id="repetir_contrasenia" class="input_datos">
+            </div>
         </div>
-        <div class="contenedor_perfil2">
-            <label for="Mercado_pago">Mercado pago
+        <div class="contenedor2">
+            <label for="Mercado_pago">Tarjeta de credito
                 <input name= "Metodo_de_pago" type="radio" id="Mercado_pago">
-                <input type="text" name="numero_tarjeta" placeholder="2151 51231531 321531213" class="radio_input">
             </label>
+            <input type="text" name="metodo_input" placeholder="Numero de tarjeta" class="radio_input" id="tarjeta_de_credito_input">
+            <input type="text" name="metodo_input" placeholder="XXX" class="radio_input" id="tarjeta_de_credito_input2">
             <label for="Cupon_de_pago">Cupon de pago
                 <input name= "Metodo_de_pago" type="radio" id="Cupon_de_pago">
-                <p>Rapi pago<input type="checkbox" name="rapi_pago"></p>
-                <p>Pago facil<input type="checkbox" name="rapi_pago"></p>
+                <p>Rapi pago<input type="checkbox" name="metodo_input" id="rapi_pago"></p>
+                <p>Pago facil<input type="checkbox" name="metodo_input" id="pago_facil"></p>
             </label>
             <label for="Transferencia_bancaria">Transferencia bancaria
                 <input name= "Metodo_de_pago" type="radio" id="Transferencia_bancaria">
-                <input type="text" name="numero_tarjeta" id="" placeholder="XXXXXXX-XXXXXXX-XXXXXXXXX" class="radio_input">
             </label>
+            <input type="text" name="metodo_input" id="transferencia_bancaria_nro" placeholder="CBU" class="radio_input">
         </div>
-        <div class="contenedor_perfil3">
+        <div class="contenedor4">
             <input type="submit" name="confirmar" value="Confirmar">
             <a href="../index.html">Cancelar subscripcion</a>
         </div>
