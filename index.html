@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
     <link rel="stylesheet" href="styles/styles.css">
-    <script src="scripts/validaciones.js"></script>
+    
     <title>Pagina principal</title>
 </head>
 <body>
@@ -23,6 +23,9 @@
             </li>
             <li class="lista_item">
                 <a href="pages/solo_peliculas.html" class="item_link">Peliculas</a>
+            </li>
+            <li class="lista_item">
+                <a href="#" class="item_link" id="cerrar_sesion">Cerrar sesion</a>
             </li>
             <li class="lista_item login">
                 <a href="pages/login.html" class="item_link">Iniciar sesion</a>
@@ -58,8 +61,27 @@
 
     <!--seccion de las peliculas y series disponibles para el usuario-->
     <!--pensado en grilla de 4 columnas-->
-    <section class="peliculas">
-        <a href="pages/detalle_pelicula.html" class="link_imagen"><img src="assets/images/Shrek.webp" alt=""><p>Shrek 1<br>10/10</p></a>
+    <section class="peliculas" id="contenido">
+
+    </section>
+
+    <!--FOOTER IGUAL PARA TODAS LAS PAGINAS-->
+    <footer class="pieDePagina">
+        <p>Redes sociales</p>
+        <a href=""><img src="assets/images/instagram.png" alt="" class="icono"></a>
+        
+        <a href=""><img src="assets/images/facebook.png" alt="" class="icono"></a>
+        
+        <a href=""><img src="assets/images/telegrama.png" alt="" class="icono"></a>
+    </footer>
+    <script src="scripts/validacionesIndex.js"></script>
+</body>
+</html>
+
+
+
+
+<!--        <a href="pages/detalle_pelicula.html" class="link_imagen"><img src="assets/images/Shrek.webp" alt=""><p>Shrek 1<br>10/10</p></a>
         <a href="pages/detalle_serie.html" class="link_imagen"><img src="assets/images/Peaky blinders.jpg" alt=""><p>Peaky Blinders<br>10/10</p></a>
         <a href="pages/detalle_serie.html" class="link_imagen"><img src="assets/images/Merli.webp" alt=""><p>Merli<br>6/10</p></a>
         <a href="pages/detalle_pelicula.html" class="link_imagen"><img src="assets/images/Maverick.webp" alt=""><p>Maverick<br>7.5/10</p></a>
@@ -90,17 +112,4 @@
         <a href="pages/detalle_serie.html" class="link_imagen"><img src="assets/images/Luis Miguel.webp" alt=""><p>Luis Miguel<br>8/10</p></a>
         <a href="pages/detalle_pelicula.html" class="link_imagen"><img src="assets/images/Super Mario Bros.avif" alt=""><p>Super Mario Bros<br>6.8/10</p></a>
         <a href="pages/detalle_serie.html" class="link_imagen"><img src="assets/images/The_Gentlemen.jpg" alt=""><p>The Gentlemen<br>10/10</p></a>
-        <a href="pages/detalle_serie.html" class="link_imagen"><img src="assets/images/thewalkingdead.jpg" alt=""><p>The Walking Dead<br>10/10</p></a>
-    </section>
-
-    <!--FOOTER IGUAL PARA TODAS LAS PAGINAS-->
-    <footer class="pieDePagina">
-        <p>Redes sociales</p>
-        <a href=""><img src="assets/images/instagram.png" alt="" class="icono"></a>
-        
-        <a href=""><img src="assets/images/facebook.png" alt="" class="icono"></a>
-        
-        <a href=""><img src="assets/images/telegrama.png" alt="" class="icono"></a>
-    </footer>
-</body>
-</html>
+        <a href="pages/detalle_serie.html" class="link_imagen"><img src="assets/images/thewalkingdead.jpg" alt=""><p>The Walking Dead<br>10/10</p></a>-->
