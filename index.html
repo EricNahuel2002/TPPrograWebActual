@@ -19,13 +19,13 @@
                 <a href="pages/perfil.html" class="item_link">Perfil</a>
             </li>
             <li class="lista_item">
-                <a href="pages/solo_series.html" class="item_link">Series</a>
+                <a href="#" class="item_link" id="series">Series</a>
             </li>
             <li class="lista_item">
-                <a href="pages/solo_peliculas.html" class="item_link">Peliculas</a>
+                <a href="#" class="item_link" id="peliculas">Peliculas</a>
             </li>
             <li class="lista_item">
-                <a href="#" class="item_link" id="cerrar_sesion">Cerrar sesion</a>
+                <a href="index.html" class="item_link" id="cerrar_sesion">Cerrar sesion</a>
             </li>
             <li class="lista_item login">
                 <a href="pages/login.html" class="item_link">Iniciar sesion</a>
@@ -36,21 +36,23 @@
 
     <!--seccion de la barra de busqueda de pelicula o serie-->
 
-    <section class="barra_de_busqueda">
-            <div class="seleccion_categoria">
-                <select id="genero">
-                <option value="0">Genero</option>
-                <option value="1">Comedia</option>
-                <option value="2">Accion</option>
-                <option value="3">Drama</option>
+    <section class="barra_de_busqueda" id="barra_busqueda">
+        <div class="seleccion_formato">
+            <select name="formato" id="formato" onchange="aplicarFiltro()">
+            <option value="Todo">Todos los formatos</option>
+            <option value="Serie">Series</option>
+            <option value="Pelicula">Peliculas</option>
+        </select>
+        
+        </div>
+            <div class="seleccion_genero">
+                <select name="genero" id="genero" onchange="aplicarFiltro()">
+                <option value="Todo">Todos los generos</option>
+                <option value="Comedia">Comedia</option>
+                <option value="Accion">Accion</option>
+                <option value="Drama">Drama</option>
             </select>
-            </div>
-            <div class="seleccion_año">
-                <select id="formato">
-                <option value="">Series y peliculas</option>
-                <option value="1">Series</option>
-                <option value="2">Peliculas</option>
-            </select>
+            <button onclick="quitarFiltro()" id="quitarFiltro">Quitar filtro</button>
             </div>
             <div class="buscador">
                 <!--<img src="assets/images/magnifier_icon-icons.com_48267.png" alt="" class="imagen_lupa">-->
@@ -60,7 +62,6 @@
     <a href="#separador" class="arriba"></a>
 
     <!--seccion de las peliculas y series disponibles para el usuario-->
-    <!--pensado en grilla de 4 columnas-->
     <section class="peliculas" id="contenido">
 
     </section>

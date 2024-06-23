@@ -5,8 +5,8 @@
     }else{
     botonCerrarSesion.addEventListener("click",function(){
     localStorage.clear();
-    });
-}
+        });
+    }
 
 
 
@@ -82,13 +82,23 @@ var contenidoCompleto = [{
 var seccionContenido = document.getElementById("contenido");
 
 
-contenidoCompleto.forEach((IContenido) => {
-    seccionContenido.innerHTML += `
-        <a href="pages/detalle_pelicula.html" class="link_imagen">
-            <img src="${IContenido.Poster}" alt="${IContenido.Titulo}">
-            <p>${IContenido.Titulo}</p>
-        </a>
-    `
+contenidoCompleto.forEach((Contenido) => {
+    if(Contenido.Formato == "Pelicula"){
+        seccionContenido.innerHTML += `
+            <a href="pages/detalle_pelicula.html" class="link_imagen">
+                <img src="${Contenido.Poster}" alt="${Contenido.Titulo}">
+                <p>${Contenido.Titulo}</p>
+            </a>
+        `
+        }
+        if(Contenido.Formato == "Serie"){
+            seccionContenido.innerHTML += `
+            <a href="pages/detalle_serie.html" class="link_imagen">
+                <img src="${Contenido.Poster}" alt="${Contenido.Titulo}">
+                <p>${Contenido.Titulo}</p>
+            </a>
+        `
+        }
 });
 
 
@@ -111,3 +121,69 @@ let buscador = document.getElementById("buscador");
                             `
         });
     })
+
+function aplicarFiltro(){
+    seccionContenido.innerHTML = "";
+    let genero = document.getElementById("genero").value;
+    let formato = document.getElementById("formato").value;
+    let contenidosFiltrados;
+    if(formato != "Todo"){
+        contenidosFiltrados = contenidoCompleto.filter(contenido => contenido.Formato == formato);
+    }else{
+        contenidosFiltrados = contenidoCompleto;
+    }
+    
+    if(genero != "Todo"){
+        contenidosFiltrados = contenidosFiltrados.filter(contenido => contenido.Genero == genero);
+    }
+
+    contenidosFiltrados.forEach((contenido) => {
+        if(contenido.Formato == "Pelicula"){
+        seccionContenido.innerHTML += `
+            <a href="pages/detalle_pelicula.html" class="link_imagen">
+                <img src="${contenido.Poster}" alt="${contenido.Titulo}">
+                <p>${contenido.Titulo}</p>
+            </a>
+        `
+        }
+        if(contenido.Formato == "Serie"){
+            seccionContenido.innerHTML += `
+            <a href="pages/detalle_serie.html" class="link_imagen">
+                <img src="${contenido.Poster}" alt="${contenido.Titulo}">
+                <p>${contenido.Titulo}</p>
+            </a>
+        `
+        }
+    });  //Por si lo llegan a ver profes, intente que por formato se cambie el href de la etiqueta a para que mande a
+        //detalle_serie o a detalle_pelicula pero no se por que no funciona
+}
+
+function quitarFiltro(){
+    document.getElementById("formato").value = "Todo";
+    document.getElementById("genero").value = "Todo";
+    aplicarFiltro();
+    document.getElementById("buscador").value = "";
+}
+
+
+document.getElementById("series").addEventListener("click",function(){
+    let seccionContenido = document.getElementById("contenido");
+    document.getElementById("formato").style.display = "none";
+    document.getElementById("genero").style.display = "none";
+    document.getElementById("quitarFiltro").style.display = "none";
+
+    let formato = document.getElementById("formato").value = "Serie";
+    aplicarFiltro();
+});
+
+
+
+document.getElementById("peliculas").addEventListener("click",function(){
+    document.getElementById("formato").style.display = "none";
+    document.getElementById("genero").style.display = "none";
+    document.getElementById("quitarFiltro").style.display = "none";
+    document.getElementById("barra_busqueda").style.justifyContent = "start";
+
+    let formato = document.getElementById("formato").value = "Pelicula";
+    aplicarFiltro();
+});

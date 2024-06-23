@@ -263,7 +263,7 @@ body{
 }
 
 
-.buscador input,.seleccion_categoria select, .seleccion_año select{
+.buscador input,.seleccion_genero select, .seleccion_formato select{
     padding: 10px;
     border-radius: 10px;
     border: 2px solid #fff;
@@ -288,7 +288,7 @@ body{
     background-size: cover;
 }
 
-.buscador input:hover, .seleccion_categoria select:hover, .seleccion_año select:hover{
+.buscador input:hover, .seleccion_genero select:hover, .seleccion_formato select:hover{
     border: 2px solid #3989d5;
 }
 
@@ -370,9 +370,18 @@ body{
 
 /*DETALLE PELICULA*/
 .seccion_detalle_pel{
-    display: flex;
-    flex-flow: row wrap;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
     justify-content: space-around;
+}
+
+.seccion_detalle_pel .info_pel{
+    grid-column: 2/4;
+}
+
+
+.seccion_detalle_pel .carousel{
+    grid-column: 2/3;
 }
 
 .peliculas{
@@ -427,30 +436,30 @@ body{
 
 /*DETALLE SERIE*/
 
-.seccion_detalle_serie{
+.seccion_detalle_serie {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
 }
 
-.series{
+.series {
     position: relative;
 }
 
-.series h2{
+.series h2 {
     position: absolute;
     top: -30px;
     left: 0px;
 }
 
-.trailer_serie{
+.trailer_serie {
     display: flex;
     flex-flow: column wrap;
     align-items: center;
     margin-bottom: 40px;
 }
 
-.trailer_serie iframe{
+.trailer_serie iframe {
     width: 300px;
     height: 300px;
     margin-bottom: 10px;
@@ -458,7 +467,7 @@ body{
     border: 2px solid #080F28;
 }
 
-.trailer_serie a{
+.trailer_serie a {
     padding: 10px;
     border-radius: 10px;
     background-color: #39b9f5;
@@ -468,12 +477,67 @@ body{
     text-align: center;
 }
 
-.info_serie{
+.info_serie {
     display: flex;
     flex-flow: column wrap;
     justify-content: space-between;
     margin-bottom: 40px;
 }
+
+.carousel {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    margin: 20px auto;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+    min-width: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item img {
+    width: 100%;
+    display: block;
+    border-radius: 10px;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 10px;
+    transform: translateY(-50%);
+    background-color: rgba(0,0,0,0.5);
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.carousel-control-prev {
+    left: 10px;
+}
+
+.carousel-control-next {
+    right: 10px;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    background-color: rgba(0,0,0,0.7);
+}
+
 
 /*DISEÑO RESPONSIVE*/
 @media screen and (max-width:70em){
@@ -490,8 +554,8 @@ body{
     .formulario_perfil{
         grid-template-columns: repeat(2,1fr);
     }
-
-}
+    
+}   
 
 @media screen and (max-width:50em){
     .peliculas{
@@ -527,6 +591,20 @@ body{
     /*De la pagina login*/
     .banner{
         max-width: 70%;
+    }
+    .seccion_detalle_pel{
+        grid-template-columns: 1fr;
+    }
+
+    .seccion_detalle_pel .info_pel{
+        grid-column: 1;
+        grid-row: 2;
+    }
+    
+    
+    .seccion_detalle_pel .carousel{
+        grid-column: 1;
+        grid-row: 3;
     }
 }
 
