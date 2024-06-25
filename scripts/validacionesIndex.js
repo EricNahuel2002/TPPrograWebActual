@@ -105,6 +105,7 @@ contenidoCompleto.forEach((Contenido) => {
 let buscador = document.getElementById("buscador");
 
     buscador.addEventListener("keyup",function(){
+        ocultarBarraBusqueda();
         //1. guardar el valor del buscador
         let valorBuscador = buscador.value.toLowerCase().trim();
         //2. filtrar el array de cursos (los que contienen 'valorFiltro')
@@ -179,11 +180,21 @@ document.getElementById("series").addEventListener("click",function(){
 
 
 document.getElementById("peliculas").addEventListener("click",function(){
+    ocultarBarraBusqueda();
+    let formato = document.getElementById("formato").value = "Pelicula";
+    aplicarFiltro();
+});
+
+function ocultarBarraBusqueda(){
     document.getElementById("formato").style.display = "none";
     document.getElementById("genero").style.display = "none";
     document.getElementById("quitarFiltro").style.display = "none";
     document.getElementById("barra_busqueda").style.justifyContent = "start";
+}
 
-    let formato = document.getElementById("formato").value = "Pelicula";
-    aplicarFiltro();
-});
+function mostrarBarraBusqueda(){
+    document.getElementById("formato").style.display = "block";
+    document.getElementById("genero").style.display = "block";
+    document.getElementById("quitarFiltro").style.display = "inline";
+    document.getElementById("barra_busqueda").style.justifyContent = "space-between";
+}
